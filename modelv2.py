@@ -16,7 +16,7 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY, timeout=120)
 
 # Leer dataset
-df = pd.read_csv("dataset/1000_Inventario_MOD.csv", encoding="latin-1", sep=";")
+df = pd.read_csv("dataset/FULL_Inventario_MOD.csv", encoding="latin-1", sep=";")
 df.columns = df.columns.str.strip().str.lower()
 df.rename(columns={'región': 'region'}, inplace=True)
 print("Columnas cargadas:", df.columns)
@@ -53,7 +53,7 @@ for _, row in df.iterrows():
         }
     ))
 
-BATCH_SIZE = 100
+BATCH_SIZE = 500
 for i in range(0, len(points), BATCH_SIZE):
     batch = points[i:i+BATCH_SIZE]
     client.upsert(collection_name=COLLECTION_NAME, points=batch)

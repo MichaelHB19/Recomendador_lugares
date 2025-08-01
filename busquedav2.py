@@ -43,7 +43,7 @@ while True:
         collection_name=COLLECTION_NAME,
         query_vector=query_vector,
         query_filter=filtro,
-        limit=5
+        limit=50
     )
 
     # Mostrar resultados
