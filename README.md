@@ -50,7 +50,7 @@ pip install qdrant-client sentence-transformers pandas
 ```bash
 python modelv2.py
 ```
-Si ocurre algun error con el cluster creado por defecto para el programa al momento de cargar los datos y probarlo, crear su propio cluster (Cuenta gratis) y reemplazar la url y el API respectivamente
+Recomendable rear su propio cluster (Cuenta gratis) y reemplazar la url y el API respectivamente en ambos archivos
 ### 2. Ejecutar el buscador
 
 ```bash
